@@ -1,0 +1,29 @@
+# Environment variables
+.env
+
+# Google Cloud credentials
+*.json
+keys/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# dbt
+dbt_github_analytics/target/
+dbt_github_analytics/dbt_packages/
+
+# Airflow
+airflow/airflow.db
+airflow/logs/
+
+# MLflow
+ml/mlruns/
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store

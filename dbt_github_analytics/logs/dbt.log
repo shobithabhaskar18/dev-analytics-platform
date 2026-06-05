@@ -1,0 +1,1193 @@
+[0m22:50:24.114099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c6e0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a2ae70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a2ab70>]}
+
+
+============================== 22:50:24.116394 | 5a3bac06-dc0a-47ac-8011-4895fb66ebce ==============================
+[0m22:50:24.116394 [info ] [MainThread]: Running with dbt=1.11.11
+[0m22:50:24.116664 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'version_check': 'True', 'log_path': '/Users/shobitha/dev-analytics-platform/dbt_github_analytics/logs', 'partial_parse': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'write_json': 'True', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'static_parser': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'target_path': 'None', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'quiet': 'False', 'fail_fast': 'False'}
+[0m22:50:24.124271 [info ] [MainThread]: dbt version: 1.11.11
+[0m22:50:24.124441 [info ] [MainThread]: python version: 3.12.2
+[0m22:50:24.124565 [info ] [MainThread]: python path: /Users/shobitha/dev-analytics-platform/venv/bin/python3
+[0m22:50:24.124677 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
+[0m22:50:32.655562 [info ] [MainThread]: Using profiles dir at .
+[0m22:50:32.655943 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m22:50:32.656117 [info ] [MainThread]: Using dbt_project.yml file at /Users/shobitha/dev-analytics-platform/dbt_github_analytics/dbt_project.yml
+[0m22:50:32.656248 [info ] [MainThread]: adapter type: bigquery
+[0m22:50:32.656366 [info ] [MainThread]: adapter version: 1.11.1
+[0m22:50:32.698301 [info ] [MainThread]: Configuration:
+[0m22:50:32.698527 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:50:32.698648 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:50:32.698760 [info ] [MainThread]: Required dependencies:
+[0m22:50:32.698918 [debug] [MainThread]: Executing "git --help"
+[0m22:50:32.737097 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:50:32.737735 [debug] [MainThread]: STDERR: "b''"
+[0m22:50:32.737894 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:50:32.738045 [info ] [MainThread]: Connection:
+[0m22:50:32.738226 [info ] [MainThread]:   method: service-account
+[0m22:50:32.738343 [info ] [MainThread]:   database: dev-analytics-platform-498418
+[0m22:50:32.738459 [info ] [MainThread]:   execution_project: dev-analytics-platform-498418
+[0m22:50:32.738563 [info ] [MainThread]:   schema: github_analytics
+[0m22:50:32.738666 [info ] [MainThread]:   location: US
+[0m22:50:32.738768 [info ] [MainThread]:   priority: None
+[0m22:50:32.738871 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m22:50:32.738973 [info ] [MainThread]:   impersonate_service_account: None
+[0m22:50:32.739074 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m22:50:32.739172 [info ] [MainThread]:   job_retries: 1
+[0m22:50:32.739272 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m22:50:32.739374 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m22:50:32.739472 [info ] [MainThread]:   timeout_seconds: None
+[0m22:50:32.739571 [info ] [MainThread]:   client_id: None
+[0m22:50:32.739666 [info ] [MainThread]:   token_uri: None
+[0m22:50:32.739762 [info ] [MainThread]:   compute_region: None
+[0m22:50:32.739859 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m22:50:32.739955 [info ] [MainThread]:   gcs_bucket: None
+[0m22:50:32.740049 [info ] [MainThread]:   dataproc_batch: None
+[0m22:50:32.740327 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m22:50:32.819092 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m22:50:32.819394 [debug] [MainThread]: On debug: select 1 as id
+[0m22:50:32.819564 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:50:34.036122 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:135ff3a9-23f4-4325-8f25-2619985221df&page=queryresults
+[0m22:50:34.333224 [debug] [MainThread]: SQL status: OK in 0.296 seconds
+[0m22:50:34.612946 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:50:34.613804 [info ] [MainThread]: [32mAll checks passed![0m
+[0m22:50:34.620603 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 10.541839, "process_in_blocks": "0", "process_kernel_time": 0.333766, "process_mem_max_rss": "224182272", "process_out_blocks": "0", "process_user_time": 1.454224}
+[0m22:50:34.621231 [debug] [MainThread]: Command `dbt debug` succeeded at 22:50:34.621109 after 10.54 seconds
+[0m22:50:34.621600 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:50:34.621975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107571400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103612930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11af19be0>]}
+[0m22:50:34.622400 [debug] [MainThread]: Flushing usage events
+[0m22:50:35.054952 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:54:19.440549 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048bbb60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dfeb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dfe8a0>]}
+
+
+============================== 22:54:19.443052 | f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2 ==============================
+[0m22:54:19.443052 [info ] [MainThread]: Running with dbt=1.11.11
+[0m22:54:19.443353 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '.', 'fail_fast': 'False', 'introspect': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error': 'None', 'write_json': 'True', 'quiet': 'False', 'version_check': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_path': '/Users/shobitha/dev-analytics-platform/dbt_github_analytics/logs', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_cache_events': 'False', 'no_print': 'None', 'debug': 'False', 'use_colors': 'True', 'invocation_command': 'dbt run --profiles-dir .'}
+[0m22:54:20.117948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105db13a0>]}
+[0m22:54:20.143033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c624b90>]}
+[0m22:54:20.143297 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m22:54:20.213100 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m22:54:20.213457 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:54:20.213619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119fa36e0>]}
+[0m22:54:20.753499 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_github_analytics.intermediate
+[0m22:54:20.757627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11d2233b0>]}
+[0m22:54:20.792622 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m22:54:20.793703 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m22:54:20.799623 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12806de20>]}
+[0m22:54:20.799809 [info ] [MainThread]: Found 5 models, 3 sources, 549 macros
+[0m22:54:20.799941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119d82ff0>]}
+[0m22:54:20.800702 [info ] [MainThread]: 
+[0m22:54:20.800839 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:54:20.800952 [info ] [MainThread]: 
+[0m22:54:20.801139 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m22:54:20.802766 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dev-analytics-platform-498418'
+[0m22:54:20.802921 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:54:22.242881 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev-analytics-platform-498418, now list_dev-analytics-platform-498418_github_analytics)
+[0m22:54:22.243760 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:54:28.402855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c96d0a0>]}
+[0m22:54:28.404357 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:54:28.484168 [debug] [Thread-1 (]: Began running node model.dbt_github_analytics.stg_commits
+[0m22:54:28.484417 [debug] [Thread-2 (]: Began running node model.dbt_github_analytics.stg_issues
+[0m22:54:28.484641 [debug] [Thread-3 (]: Began running node model.dbt_github_analytics.stg_pull_requests
+[0m22:54:28.484875 [info ] [Thread-1 (]: 1 of 5 START sql view model github_analytics.stg_commits ....................... [RUN]
+[0m22:54:28.485117 [info ] [Thread-2 (]: 2 of 5 START sql view model github_analytics.stg_issues ........................ [RUN]
+[0m22:54:28.485340 [info ] [Thread-3 (]: 3 of 5 START sql view model github_analytics.stg_pull_requests ................. [RUN]
+[0m22:54:28.485613 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev-analytics-platform-498418_github_analytics, now model.dbt_github_analytics.stg_commits)
+[0m22:54:28.485817 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.dbt_github_analytics.stg_issues'
+[0m22:54:28.486002 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.dbt_github_analytics.stg_pull_requests'
+[0m22:54:28.486152 [debug] [Thread-1 (]: Began compiling node model.dbt_github_analytics.stg_commits
+[0m22:54:28.486290 [debug] [Thread-2 (]: Began compiling node model.dbt_github_analytics.stg_issues
+[0m22:54:28.486420 [debug] [Thread-3 (]: Began compiling node model.dbt_github_analytics.stg_pull_requests
+[0m22:54:28.490101 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_github_analytics.stg_commits"
+[0m22:54:28.491336 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_github_analytics.stg_issues"
+[0m22:54:28.493284 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_github_analytics.stg_pull_requests"
+[0m22:54:28.493838 [debug] [Thread-3 (]: Began executing node model.dbt_github_analytics.stg_pull_requests
+[0m22:54:28.493987 [debug] [Thread-2 (]: Began executing node model.dbt_github_analytics.stg_issues
+[0m22:54:28.494141 [debug] [Thread-1 (]: Began executing node model.dbt_github_analytics.stg_commits
+[0m22:54:28.506814 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_github_analytics.stg_pull_requests"
+[0m22:54:28.507888 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_github_analytics.stg_issues"
+[0m22:54:28.508923 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_github_analytics.stg_commits"
+[0m22:54:28.509434 [debug] [Thread-3 (]: On model.dbt_github_analytics.stg_pull_requests: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "model.dbt_github_analytics.stg_pull_requests"} */
+
+
+  create or replace view `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+  OPTIONS()
+  as select
+    pr_number,
+    repo,
+    title,
+    state,
+    author_login,
+    timestamp(created_at) as created_at,
+    timestamp(merged_at) as merged_at,
+    timestamp(closed_at) as closed_at,
+    cycle_time_hours,
+    review_comments,
+    commits,
+    additions,
+    deletions,
+    case when merged_at is not null then true else false end as is_merged
+from `dev-analytics-platform-498418`.`github_analytics`.`raw_pull_requests`
+where pr_number is not null;
+
+
+[0m22:54:28.509659 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:54:28.509857 [debug] [Thread-2 (]: On model.dbt_github_analytics.stg_issues: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "model.dbt_github_analytics.stg_issues"} */
+
+
+  create or replace view `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+  OPTIONS()
+  as select
+    issue_number,
+    repo,
+    title,
+    state,
+    author_login,
+    labels,
+    timestamp(created_at) as created_at,
+    timestamp(closed_at) as closed_at,
+    resolution_hours,
+    comments
+from `dev-analytics-platform-498418`.`github_analytics`.`raw_issues`
+where issue_number is not null;
+
+
+[0m22:54:28.510073 [debug] [Thread-1 (]: On model.dbt_github_analytics.stg_commits: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "model.dbt_github_analytics.stg_commits"} */
+
+
+  create or replace view `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+  OPTIONS()
+  as select
+    sha,
+    repo,
+    author_login,
+    author_name,
+    message,
+    timestamp(committed_at) as committed_at,
+    date(timestamp(committed_at)) as commit_date,
+    extract(week from timestamp(committed_at)) as commit_week,
+    extract(year from timestamp(committed_at)) as commit_year
+from `dev-analytics-platform-498418`.`github_analytics`.`raw_commits`
+where sha is not null;
+
+
+[0m22:54:28.510309 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:54:28.557681 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:54:33.040589 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:abc2f711-374b-4761-b67e-eb1ca4e9fdaf&page=queryresults
+[0m22:54:33.042816 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:37928b13-0e9d-4a41-af7f-12b9d3d1bad9&page=queryresults
+[0m22:54:33.056883 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:2500a4b5-311d-4b85-8932-0499499bae14&page=queryresults
+[0m22:54:33.921963 [debug] [Thread-3 (]: SQL status: OK in 0.878 seconds
+[0m22:54:33.975930 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c900c20>]}
+[0m22:54:33.976351 [info ] [Thread-3 (]: 3 of 5 OK created sql view model github_analytics.stg_pull_requests ............ [[32mCREATE VIEW (0 processed)[0m in 5.49s]
+[0m22:54:33.976675 [debug] [Thread-3 (]: Finished running node model.dbt_github_analytics.stg_pull_requests
+[0m22:54:34.866968 [debug] [Thread-1 (]: SQL status: OK in 1.823 seconds
+[0m22:54:34.871489 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1280be030>]}
+[0m22:54:34.872204 [info ] [Thread-1 (]: 1 of 5 OK created sql view model github_analytics.stg_commits .................. [[32mCREATE VIEW (0 processed)[0m in 6.39s]
+[0m22:54:34.872765 [debug] [Thread-1 (]: Finished running node model.dbt_github_analytics.stg_commits
+[0m22:54:35.915511 [debug] [Thread-2 (]: SQL status: OK in 2.858 seconds
+[0m22:54:35.923854 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x128448770>]}
+[0m22:54:35.924933 [info ] [Thread-2 (]: 2 of 5 OK created sql view model github_analytics.stg_issues ................... [[32mCREATE VIEW (0 processed)[0m in 7.44s]
+[0m22:54:35.925749 [debug] [Thread-2 (]: Finished running node model.dbt_github_analytics.stg_issues
+[0m22:54:35.927110 [debug] [Thread-4 (]: Began running node model.dbt_github_analytics.developer_metrics
+[0m22:54:35.927540 [debug] [Thread-3 (]: Began running node model.dbt_github_analytics.repo_health_metrics
+[0m22:54:35.928142 [info ] [Thread-4 (]: 4 of 5 START sql table model github_analytics.developer_metrics ................ [RUN]
+[0m22:54:35.928850 [info ] [Thread-3 (]: 5 of 5 START sql table model github_analytics.repo_health_metrics .............. [RUN]
+[0m22:54:35.929577 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.dbt_github_analytics.developer_metrics'
+[0m22:54:35.930034 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_github_analytics.stg_pull_requests, now model.dbt_github_analytics.repo_health_metrics)
+[0m22:54:35.930474 [debug] [Thread-4 (]: Began compiling node model.dbt_github_analytics.developer_metrics
+[0m22:54:35.930870 [debug] [Thread-3 (]: Began compiling node model.dbt_github_analytics.repo_health_metrics
+[0m22:54:35.936431 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_github_analytics.developer_metrics"
+[0m22:54:35.940337 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_github_analytics.repo_health_metrics"
+[0m22:54:35.941295 [debug] [Thread-4 (]: Began executing node model.dbt_github_analytics.developer_metrics
+[0m22:54:35.941631 [debug] [Thread-3 (]: Began executing node model.dbt_github_analytics.repo_health_metrics
+[0m22:54:35.964791 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_github_analytics.developer_metrics"
+[0m22:54:35.966421 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_github_analytics.repo_health_metrics"
+[0m22:54:35.966976 [debug] [Thread-3 (]: On model.dbt_github_analytics.repo_health_metrics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "model.dbt_github_analytics.repo_health_metrics"} */
+
+  
+    
+
+    create or replace table `dev-analytics-platform-498418`.`github_analytics`.`repo_health_metrics`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with weekly_commits as (
+    select
+        repo,
+        commit_year,
+        commit_week,
+        count(*) as weekly_commit_count,
+        count(distinct author_login) as active_contributors
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+    group by 1, 2, 3
+),
+
+pr_metrics as (
+    select
+        repo,
+        count(*) as total_prs,
+        countif(is_merged) as merged_prs,
+        round(avg(cycle_time_hours), 2) as avg_pr_cycle_time_hours,
+        countif(
+            timestamp_diff(merged_at, created_at, hour) <= 24
+            and is_merged
+        ) as prs_merged_within_24h
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+    group by 1
+),
+
+issue_metrics as (
+    select
+        repo,
+        count(*) as total_issues,
+        round(avg(resolution_hours), 2) as avg_resolution_hours,
+        countif(resolution_hours <= 48) as issues_resolved_within_48h
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+    group by 1
+),
+
+deploy_freq as (
+    select
+        repo,
+        count(*) as total_merges_to_main,
+        round(count(*) / 12.0, 2) as avg_weekly_deploys
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+    where is_merged = true
+    group by 1
+)
+
+select
+    p.repo,
+    p.total_prs,
+    p.merged_prs,
+    p.avg_pr_cycle_time_hours,
+    p.prs_merged_within_24h,
+    coalesce(i.total_issues, 0) as total_issues,
+    coalesce(i.avg_resolution_hours, 0) as avg_resolution_hours,
+    coalesce(i.issues_resolved_within_48h, 0) as issues_resolved_within_48h,
+    coalesce(d.total_merges_to_main, 0) as total_merges_to_main,
+    coalesce(d.avg_weekly_deploys, 0) as avg_weekly_deploys
+from pr_metrics p
+left join issue_metrics i on p.repo = i.repo
+left join deploy_freq d on p.repo = d.repo
+    );
+  
+[0m22:54:35.967364 [debug] [Thread-4 (]: On model.dbt_github_analytics.developer_metrics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "model.dbt_github_analytics.developer_metrics"} */
+
+  
+    
+
+    create or replace table `dev-analytics-platform-498418`.`github_analytics`.`developer_metrics`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with commits as (
+    select
+        repo,
+        author_login,
+        commit_week,
+        commit_year,
+        count(*) as weekly_commits
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+    where author_login is not null
+    group by 1, 2, 3, 4
+),
+
+prs as (
+    select
+        repo,
+        author_login,
+        count(*) as total_prs,
+        countif(is_merged) as merged_prs,
+        round(avg(cycle_time_hours), 2) as avg_cycle_time_hours,
+        round(avg(review_comments), 2) as avg_review_comments,
+        safe_divide(countif(is_merged), count(*)) as merge_rate
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+    where author_login is not null
+    group by 1, 2
+),
+
+issues as (
+    select
+        repo,
+        author_login,
+        count(*) as total_issues_opened,
+        round(avg(resolution_hours), 2) as avg_issue_resolution_hours
+    from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+    where author_login is not null
+    group by 1, 2
+)
+
+select
+    p.repo,
+    p.author_login,
+    p.total_prs,
+    p.merged_prs,
+    p.avg_cycle_time_hours,
+    p.avg_review_comments,
+    p.merge_rate,
+    coalesce(i.total_issues_opened, 0) as total_issues_opened,
+    coalesce(i.avg_issue_resolution_hours, 0) as avg_issue_resolution_hours
+from prs p
+left join issues i
+    on p.repo = i.repo
+    and p.author_login = i.author_login
+    );
+  
+[0m22:54:35.967647 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:54:35.967858 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:54:37.957262 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:8c64e689-db76-4c5f-85f1-6953108c850e&page=queryresults
+[0m22:54:39.953377 [debug] [Thread-4 (]: SQL status: OK in 1.995 seconds
+[0m22:54:40.223145 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:96918b30-9b4e-47ec-bc79-cbbe576270fc&page=queryresults
+[0m22:54:40.225382 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x128513050>]}
+[0m22:54:40.226783 [info ] [Thread-4 (]: 4 of 5 OK created sql table model github_analytics.developer_metrics ........... [[32mCREATE TABLE (677.0 rows, 186.0 KiB processed)[0m in 4.30s]
+[0m22:54:40.227468 [debug] [Thread-4 (]: Finished running node model.dbt_github_analytics.developer_metrics
+[0m22:54:42.284364 [debug] [Thread-3 (]: SQL status: OK in 2.058 seconds
+[0m22:54:42.514455 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f5ba6fd7-180d-47ee-b23a-1ad3a6583ed2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12845b140>]}
+[0m22:54:42.515646 [info ] [Thread-3 (]: 5 of 5 OK created sql table model github_analytics.repo_health_metrics ......... [[32mCREATE TABLE (5.0 rows, 178.2 KiB processed)[0m in 6.58s]
+[0m22:54:42.516499 [debug] [Thread-3 (]: Finished running node model.dbt_github_analytics.repo_health_metrics
+[0m22:54:42.518416 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:54:42.594921 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:54:42.595093 [debug] [MainThread]: Connection 'model.dbt_github_analytics.stg_commits' was properly closed.
+[0m22:54:42.595204 [debug] [MainThread]: Connection 'model.dbt_github_analytics.stg_issues' was properly closed.
+[0m22:54:42.595311 [debug] [MainThread]: Connection 'model.dbt_github_analytics.repo_health_metrics' was properly closed.
+[0m22:54:42.595416 [debug] [MainThread]: Connection 'model.dbt_github_analytics.developer_metrics' was properly closed.
+[0m22:54:42.595569 [info ] [MainThread]: 
+[0m22:54:42.595717 [info ] [MainThread]: Finished running 2 table models, 3 view models in 0 hours 0 minutes and 21.79 seconds (21.79s).
+[0m22:54:42.596249 [debug] [MainThread]: Command end result
+[0m22:54:42.612541 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m22:54:42.613429 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m22:54:42.615870 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/run_results.json
+[0m22:54:42.615982 [info ] [MainThread]: 
+[0m22:54:42.616119 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:54:42.616231 [info ] [MainThread]: 
+[0m22:54:42.616363 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m22:54:42.618464 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 23.21425, "process_in_blocks": "0", "process_kernel_time": 0.343505, "process_mem_max_rss": "228655104", "process_out_blocks": "0", "process_user_time": 2.625352}
+[0m22:54:42.618665 [debug] [MainThread]: Command `dbt run` succeeded at 22:54:42.618627 after 23.21 seconds
+[0m22:54:42.618816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x101632930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dfeb70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ca5f680>]}
+[0m22:54:42.618957 [debug] [MainThread]: Flushing usage events
+[0m22:54:45.405782 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:47:40.731460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cf3f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ebad50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108eba9f0>]}
+
+
+============================== 23:47:40.733890 | 7112f392-b866-4f63-9f87-8f10c24d9c72 ==============================
+[0m23:47:40.733890 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:47:40.734181 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '.', 'quiet': 'False', 'log_path': '/Users/shobitha/dev-analytics-platform/dbt_github_analytics/logs', 'partial_parse': 'True', 'warn_error': 'None', 'write_json': 'True', 'target_path': 'None', 'printer_width': '80', 'log_cache_events': 'False', 'static_parser': 'True', 'version_check': 'True', 'log_format': 'default', 'cache_selected_only': 'False', 'introspect': 'True', 'invocation_command': 'dbt test --profiles-dir .', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'debug': 'False'}
+[0m23:47:41.415803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11231ea80>]}
+[0m23:47:41.439614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10648d2b0>]}
+[0m23:47:41.439863 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m23:47:41.507491 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m23:47:41.597480 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m23:47:41.597770 [debug] [MainThread]: Partial parsing: added file: dbt_github_analytics://models/staging/schema.yml
+[0m23:47:41.706854 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_github_analytics.intermediate
+[0m23:47:41.712410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11330a240>]}
+[0m23:47:41.756189 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m23:47:41.757334 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m23:47:41.767655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113414bf0>]}
+[0m23:47:41.767851 [info ] [MainThread]: Found 5 models, 9 data tests, 3 sources, 549 macros
+[0m23:47:41.767991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108dff7d0>]}
+[0m23:47:41.768857 [info ] [MainThread]: 
+[0m23:47:41.768997 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m23:47:41.769107 [info ] [MainThread]: 
+[0m23:47:41.769300 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m23:47:41.770998 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dev-analytics-platform-498418_github_analytics'
+[0m23:47:41.771151 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:47:42.377707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7112f392-b866-4f63-9f87-8f10c24d9c72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1133c7530>]}
+[0m23:47:42.378659 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:47:42.453052 [debug] [Thread-1 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:47:42.453263 [debug] [Thread-2 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:47:42.453455 [debug] [Thread-3 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:47:42.453589 [debug] [Thread-4 (]: Began running node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:47:42.453745 [info ] [Thread-1 (]: 1 of 9 START test not_null_stg_commits_committed_at ............................ [RUN]
+[0m23:47:42.453995 [info ] [Thread-2 (]: 2 of 9 START test not_null_stg_commits_repo .................................... [RUN]
+[0m23:47:42.454202 [info ] [Thread-3 (]: 3 of 9 START test not_null_stg_commits_sha ..................................... [RUN]
+[0m23:47:42.454377 [info ] [Thread-4 (]: 4 of 9 START test not_null_stg_issues_issue_number ............................. [RUN]
+[0m23:47:42.454584 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev-analytics-platform-498418_github_analytics, now test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5)
+[0m23:47:42.454785 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00'
+[0m23:47:42.454959 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4'
+[0m23:47:42.455130 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5'
+[0m23:47:42.455275 [debug] [Thread-1 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:47:42.455410 [debug] [Thread-2 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:47:42.455536 [debug] [Thread-3 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:47:42.455669 [debug] [Thread-4 (]: Began compiling node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:47:42.463770 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"
+[0m23:47:42.465412 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"
+[0m23:47:42.466943 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"
+[0m23:47:42.468488 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"
+[0m23:47:42.468950 [debug] [Thread-1 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:47:42.469129 [debug] [Thread-2 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:47:42.475196 [debug] [Thread-4 (]: Began executing node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:47:42.475350 [debug] [Thread-3 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:47:42.479150 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"
+[0m23:47:42.480138 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"
+[0m23:47:42.481105 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"
+[0m23:47:42.482010 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"
+[0m23:47:42.482551 [debug] [Thread-3 (]: On test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sha
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where sha is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:42.482745 [debug] [Thread-2 (]: On test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:42.482951 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m23:47:42.483151 [debug] [Thread-1 (]: On test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select committed_at
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where committed_at is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:42.483335 [debug] [Thread-4 (]: On test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select issue_number
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+where issue_number is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:42.483492 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m23:47:42.530333 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:47:42.530787 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m23:47:44.071041 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:6417c29b-70f2-4875-b96b-3a3a571dcb16&page=queryresults
+[0m23:47:44.072605 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:23c3abee-7eed-4332-b5d9-380cc4bf1942&page=queryresults
+[0m23:47:44.073355 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:4097d704-aeb5-471f-9998-838464906189&page=queryresults
+[0m23:47:44.074063 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:38961e11-6584-4ec2-b71f-c8791bb360ea&page=queryresults
+[0m23:47:44.271979 [debug] [Thread-1 (]: SQL status: OK in 0.195 seconds
+[0m23:47:44.293730 [debug] [Thread-4 (]: SQL status: OK in 0.219 seconds
+[0m23:47:44.315185 [debug] [Thread-3 (]: SQL status: OK in 0.238 seconds
+[0m23:47:44.341843 [debug] [Thread-2 (]: SQL status: OK in 0.267 seconds
+[0m23:47:45.026840 [info ] [Thread-3 (]: 3 of 9 PASS not_null_stg_commits_sha ........................................... [[32mPASS[0m in 2.57s]
+[0m23:47:45.028137 [info ] [Thread-1 (]: 1 of 9 PASS not_null_stg_commits_committed_at .................................. [[32mPASS[0m in 2.57s]
+[0m23:47:45.030765 [info ] [Thread-2 (]: 2 of 9 PASS not_null_stg_commits_repo .......................................... [[32mPASS[0m in 2.58s]
+[0m23:47:45.031517 [debug] [Thread-3 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:47:45.032708 [info ] [Thread-4 (]: 4 of 9 PASS not_null_stg_issues_issue_number ................................... [[32mPASS[0m in 2.58s]
+[0m23:47:45.033261 [debug] [Thread-1 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:47:45.033724 [debug] [Thread-2 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:47:45.034099 [debug] [Thread-3 (]: Began running node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:47:45.034680 [debug] [Thread-4 (]: Finished running node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:47:45.035068 [debug] [Thread-1 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:47:45.035481 [debug] [Thread-2 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:47:45.035870 [info ] [Thread-3 (]: 5 of 9 START test not_null_stg_issues_repo ..................................... [RUN]
+[0m23:47:45.036252 [debug] [Thread-4 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:47:45.036571 [info ] [Thread-1 (]: 6 of 9 START test not_null_stg_pull_requests_cycle_time_hours .................. [RUN]
+[0m23:47:45.036878 [info ] [Thread-2 (]: 7 of 9 START test not_null_stg_pull_requests_pr_number ......................... [RUN]
+[0m23:47:45.037207 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4, now test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9)
+[0m23:47:45.037493 [info ] [Thread-4 (]: 8 of 9 START test not_null_stg_pull_requests_repo .............................. [RUN]
+[0m23:47:45.037788 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5, now test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23)
+[0m23:47:45.038063 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00, now test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9)
+[0m23:47:45.038346 [debug] [Thread-3 (]: Began compiling node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:47:45.038606 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5, now test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060)
+[0m23:47:45.038872 [debug] [Thread-1 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:47:45.039124 [debug] [Thread-2 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:47:45.043150 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"
+[0m23:47:45.043412 [debug] [Thread-4 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:47:45.046167 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"
+[0m23:47:45.048807 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"
+[0m23:47:45.051653 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"
+[0m23:47:45.052119 [debug] [Thread-1 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:47:45.052381 [debug] [Thread-3 (]: Began executing node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:47:45.052600 [debug] [Thread-2 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:47:45.054165 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"
+[0m23:47:45.054350 [debug] [Thread-4 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:47:45.055688 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"
+[0m23:47:45.057820 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"
+[0m23:47:45.059259 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"
+[0m23:47:45.059588 [debug] [Thread-1 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cycle_time_hours
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where cycle_time_hours is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:45.059937 [debug] [Thread-3 (]: On test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:45.060218 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:47:45.060443 [debug] [Thread-2 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select pr_number
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where pr_number is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:45.060706 [debug] [Thread-4 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:45.060982 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m23:47:45.116014 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m23:47:45.116175 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m23:47:46.323649 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:681be6aa-71b0-43d4-8859-70290b619a7e&page=queryresults
+[0m23:47:46.324559 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:dd8d7eda-a0a9-4420-b21c-7d3bf1e395ac&page=queryresults
+[0m23:47:46.325179 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:f082fec8-10dd-47dc-a95c-01705fb9a14d&page=queryresults
+[0m23:47:46.325726 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:c21683a4-7c01-4189-ad18-3f1afedf9d1a&page=queryresults
+[0m23:47:46.630301 [debug] [Thread-1 (]: SQL status: OK in 0.302 seconds
+[0m23:47:46.631344 [debug] [Thread-3 (]: SQL status: OK in 0.303 seconds
+[0m23:47:46.631987 [debug] [Thread-2 (]: SQL status: OK in 0.305 seconds
+[0m23:47:46.632634 [debug] [Thread-4 (]: SQL status: OK in 0.306 seconds
+[0m23:47:47.009404 [info ] [Thread-2 (]: 7 of 9 PASS not_null_stg_pull_requests_pr_number ............................... [[32mPASS[0m in 1.97s]
+[0m23:47:47.010596 [debug] [Thread-2 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:47:47.011125 [debug] [Thread-2 (]: Began running node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:47:47.011620 [info ] [Thread-2 (]: 9 of 9 START test unique_stg_commits_sha ....................................... [RUN]
+[0m23:47:47.012124 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9, now test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610)
+[0m23:47:47.012539 [debug] [Thread-2 (]: Began compiling node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:47:47.022040 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"
+[0m23:47:47.023027 [debug] [Thread-2 (]: Began executing node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:47:47.025673 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"
+[0m23:47:47.028740 [error] [Thread-1 (]: 6 of 9 FAIL 1273 not_null_stg_pull_requests_cycle_time_hours ................... [[31mFAIL 1273[0m in 1.99s]
+[0m23:47:47.029250 [debug] [Thread-2 (]: On test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select sha as unique_field
+  from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+  where sha is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:47:47.029820 [debug] [Thread-1 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:47:47.030189 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m23:47:47.096534 [info ] [Thread-3 (]: 5 of 9 PASS not_null_stg_issues_repo ........................................... [[32mPASS[0m in 2.06s]
+[0m23:47:47.097135 [debug] [Thread-3 (]: Finished running node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:47:47.097662 [info ] [Thread-4 (]: 8 of 9 PASS not_null_stg_pull_requests_repo .................................... [[32mPASS[0m in 2.06s]
+[0m23:47:47.098116 [debug] [Thread-4 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:47:48.030932 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:573567da-8116-48ec-aa7b-e2c422f56ae4&page=queryresults
+[0m23:47:48.265389 [debug] [Thread-2 (]: SQL status: OK in 0.233 seconds
+[0m23:47:49.194694 [info ] [Thread-2 (]: 9 of 9 PASS unique_stg_commits_sha ............................................. [[32mPASS[0m in 2.18s]
+[0m23:47:49.195924 [debug] [Thread-2 (]: Finished running node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:47:49.197923 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m23:47:49.273178 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:47:49.273364 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23' was properly closed.
+[0m23:47:49.273480 [debug] [MainThread]: Connection 'test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610' was properly closed.
+[0m23:47:49.273587 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9' was properly closed.
+[0m23:47:49.273692 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060' was properly closed.
+[0m23:47:49.273826 [info ] [MainThread]: 
+[0m23:47:49.273958 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 7.50 seconds (7.50s).
+[0m23:47:49.274702 [debug] [MainThread]: Command end result
+[0m23:47:49.290145 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m23:47:49.290857 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m23:47:49.293936 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/run_results.json
+[0m23:47:49.294069 [info ] [MainThread]: 
+[0m23:47:49.294206 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m23:47:49.294323 [info ] [MainThread]: 
+[0m23:47:49.294474 [error] [MainThread]: [31mFailure in test not_null_stg_pull_requests_cycle_time_hours (models/staging/schema.yml)[0m
+[0m23:47:49.294618 [error] [MainThread]:   Got 1273 results, configured to fail if != 0
+[0m23:47:49.294721 [info ] [MainThread]: 
+[0m23:47:49.294853 [info ] [MainThread]:   compiled code at target/compiled/dbt_github_analytics/models/staging/schema.yml/not_null_stg_pull_requests_cycle_time_hours.sql
+[0m23:47:49.294963 [info ] [MainThread]: 
+[0m23:47:49.295089 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=9
+[0m23:47:49.297584 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 8.602816, "process_in_blocks": "0", "process_kernel_time": 0.306892, "process_mem_max_rss": "244760576", "process_out_blocks": "0", "process_user_time": 2.292013}
+[0m23:47:49.297907 [debug] [MainThread]: Command `dbt test` failed at 23:47:49.297874 after 8.60 seconds
+[0m23:47:49.298052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104a56930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e4aab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1131f7ec0>]}
+[0m23:47:49.298191 [debug] [MainThread]: Flushing usage events
+[0m23:47:49.851816 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:55:45.505936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071dd640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f8fb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10728aa50>]}
+
+
+============================== 23:55:45.508350 | 92211f44-21ab-4ad7-b3ea-4cce0501879e ==============================
+[0m23:55:45.508350 [info ] [MainThread]: Running with dbt=1.11.11
+[0m23:55:45.508643 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'warn_error': 'None', 'empty': 'None', 'log_path': '/Users/shobitha/dev-analytics-platform/dbt_github_analytics/logs', 'partial_parse': 'True', 'quiet': 'False', 'static_parser': 'True', 'profiles_dir': '.', 'cache_selected_only': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'version_check': 'True', 'invocation_command': 'dbt test --profiles-dir .', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'target_path': 'None', 'fail_fast': 'False', 'indirect_selection': 'eager', 'printer_width': '80'}
+[0m23:55:46.171391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046cfcb0>]}
+[0m23:55:46.195222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c8473e0>]}
+[0m23:55:46.195476 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m23:55:46.267213 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m23:55:46.364625 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m23:55:46.364984 [debug] [MainThread]: Partial parsing: updated file: dbt_github_analytics://models/staging/schema.yml
+[0m23:55:46.530298 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_github_analytics.intermediate
+[0m23:55:46.536025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e9bd310>]}
+[0m23:55:46.577589 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m23:55:46.579455 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m23:55:46.590591 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ea09910>]}
+[0m23:55:46.590782 [info ] [MainThread]: Found 5 models, 9 data tests, 3 sources, 549 macros
+[0m23:55:46.590920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e93bd70>]}
+[0m23:55:46.591811 [info ] [MainThread]: 
+[0m23:55:46.591952 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m23:55:46.592062 [info ] [MainThread]: 
+[0m23:55:46.592257 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m23:55:46.593903 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dev-analytics-platform-498418_github_analytics'
+[0m23:55:46.594053 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:55:47.152667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92211f44-21ab-4ad7-b3ea-4cce0501879e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e8bfb90>]}
+[0m23:55:47.153660 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:55:47.233312 [debug] [Thread-1 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:55:47.233529 [debug] [Thread-2 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:55:47.233693 [debug] [Thread-3 (]: Began running node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:55:47.233855 [debug] [Thread-4 (]: Began running node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:55:47.234010 [info ] [Thread-1 (]: 1 of 9 START test not_null_stg_commits_committed_at ............................ [RUN]
+[0m23:55:47.234190 [info ] [Thread-2 (]: 2 of 9 START test not_null_stg_commits_repo .................................... [RUN]
+[0m23:55:47.234346 [info ] [Thread-3 (]: 3 of 9 START test not_null_stg_commits_sha ..................................... [RUN]
+[0m23:55:47.234498 [info ] [Thread-4 (]: 4 of 9 START test not_null_stg_issues_issue_number ............................. [RUN]
+[0m23:55:47.234689 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev-analytics-platform-498418_github_analytics, now test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5)
+[0m23:55:47.234869 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00'
+[0m23:55:47.235044 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4'
+[0m23:55:47.235210 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5'
+[0m23:55:47.235345 [debug] [Thread-1 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:55:47.235473 [debug] [Thread-2 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:55:47.235600 [debug] [Thread-3 (]: Began compiling node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:55:47.235723 [debug] [Thread-4 (]: Began compiling node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:55:47.243099 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"
+[0m23:55:47.244668 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"
+[0m23:55:47.246188 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"
+[0m23:55:47.247719 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"
+[0m23:55:47.248286 [debug] [Thread-1 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:55:47.248454 [debug] [Thread-3 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:55:47.248577 [debug] [Thread-2 (]: Began executing node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:55:47.248707 [debug] [Thread-4 (]: Began executing node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:55:47.258280 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"
+[0m23:55:47.259297 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"
+[0m23:55:47.260209 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"
+[0m23:55:47.261623 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"
+[0m23:55:47.262053 [debug] [Thread-3 (]: On test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sha
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where sha is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:47.262248 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m23:55:47.262416 [debug] [Thread-2 (]: On test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:47.262713 [debug] [Thread-4 (]: On test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select issue_number
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+where issue_number is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:47.309655 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m23:55:47.310128 [debug] [Thread-1 (]: On test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select committed_at
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+where committed_at is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:47.310300 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m23:55:47.357080 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:55:48.320814 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:9ef1e306-37c9-4813-9888-1b7f64f58397&page=queryresults
+[0m23:55:48.321783 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:c7a2b4e8-bed9-4ed3-8964-f73ab9b3fce8&page=queryresults
+[0m23:55:48.322457 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:d764d18d-0185-424f-ac08-4d3d70bd2c8c&page=queryresults
+[0m23:55:48.363681 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:9a8a209f-105a-4197-9dbd-dce9e025f08e&page=queryresults
+[0m23:55:48.627977 [debug] [Thread-1 (]: SQL status: OK in 0.303 seconds
+[0m23:55:48.628993 [debug] [Thread-3 (]: SQL status: OK in 0.305 seconds
+[0m23:55:48.629651 [debug] [Thread-4 (]: SQL status: OK in 0.307 seconds
+[0m23:55:48.817670 [debug] [Thread-2 (]: SQL status: OK in 0.453 seconds
+[0m23:55:49.043457 [info ] [Thread-3 (]: 3 of 9 PASS not_null_stg_commits_sha ........................................... [[32mPASS[0m in 1.81s]
+[0m23:55:49.044194 [debug] [Thread-3 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4
+[0m23:55:49.044528 [debug] [Thread-3 (]: Began running node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:55:49.044859 [info ] [Thread-3 (]: 5 of 9 START test not_null_stg_issues_repo ..................................... [RUN]
+[0m23:55:49.045508 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_sha.23a9fe0ed4, now test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9)
+[0m23:55:49.045863 [debug] [Thread-3 (]: Began compiling node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:55:49.050017 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"
+[0m23:55:49.051387 [debug] [Thread-3 (]: Began executing node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:55:49.053161 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"
+[0m23:55:49.053612 [debug] [Thread-3 (]: On test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_issues`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:49.053919 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m23:55:49.116057 [info ] [Thread-1 (]: 1 of 9 PASS not_null_stg_commits_committed_at .................................. [[32mPASS[0m in 1.88s]
+[0m23:55:49.116866 [info ] [Thread-4 (]: 4 of 9 PASS not_null_stg_issues_issue_number ................................... [[32mPASS[0m in 1.88s]
+[0m23:55:49.117302 [debug] [Thread-1 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5
+[0m23:55:49.117530 [debug] [Thread-4 (]: Finished running node test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5
+[0m23:55:49.117694 [debug] [Thread-1 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:55:49.117887 [debug] [Thread-4 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:55:49.118061 [info ] [Thread-1 (]: 6 of 9 START test not_null_stg_pull_requests_cycle_time_hours .................. [RUN]
+[0m23:55:49.118216 [info ] [Thread-4 (]: 7 of 9 START test not_null_stg_pull_requests_pr_number ......................... [RUN]
+[0m23:55:49.118379 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_committed_at.4508f34dc5, now test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23)
+[0m23:55:49.118520 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_issues_issue_number.63bef280b5, now test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9)
+[0m23:55:49.118660 [debug] [Thread-1 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:55:49.118790 [debug] [Thread-4 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:55:49.120755 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"
+[0m23:55:49.123046 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"
+[0m23:55:49.123504 [debug] [Thread-1 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:55:49.123643 [debug] [Thread-4 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:55:49.124643 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"
+[0m23:55:49.125631 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"
+[0m23:55:49.125917 [debug] [Thread-1 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cycle_time_hours
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where cycle_time_hours is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:49.126163 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:55:49.126315 [debug] [Thread-4 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select pr_number
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where pr_number is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:49.126518 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m23:55:49.223344 [info ] [Thread-2 (]: 2 of 9 PASS not_null_stg_commits_repo .......................................... [[32mPASS[0m in 1.99s]
+[0m23:55:49.223609 [debug] [Thread-2 (]: Finished running node test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00
+[0m23:55:49.223820 [debug] [Thread-2 (]: Began running node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:55:49.224085 [info ] [Thread-2 (]: 8 of 9 START test not_null_stg_pull_requests_repo .............................. [RUN]
+[0m23:55:49.224259 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_commits_repo.c286f85e00, now test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060)
+[0m23:55:49.224387 [debug] [Thread-2 (]: Began compiling node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:55:49.226102 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"
+[0m23:55:49.226386 [debug] [Thread-2 (]: Began executing node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:55:49.227322 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"
+[0m23:55:49.227705 [debug] [Thread-2 (]: On test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select repo
+from `dev-analytics-platform-498418`.`github_analytics`.`stg_pull_requests`
+where repo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:49.227864 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m23:55:49.957340 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:d96e9456-d3f0-4d24-9b0f-0d2bbd30b575&page=queryresults
+[0m23:55:49.958487 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:832fc579-1c75-4e95-9020-475efc5780c2&page=queryresults
+[0m23:55:49.975286 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:133276d8-9ed4-4407-83a2-b77dfc071805&page=queryresults
+[0m23:55:50.050485 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:02da56ef-513f-4681-866d-507d8dbf1df5&page=queryresults
+[0m23:55:50.169535 [debug] [Thread-2 (]: SQL status: OK in 0.193 seconds
+[0m23:55:50.185294 [debug] [Thread-3 (]: SQL status: OK in 0.225 seconds
+[0m23:55:50.199132 [debug] [Thread-4 (]: SQL status: OK in 0.240 seconds
+[0m23:55:50.280200 [debug] [Thread-1 (]: SQL status: OK in 0.228 seconds
+[0m23:55:50.619020 [info ] [Thread-4 (]: 7 of 9 PASS not_null_stg_pull_requests_pr_number ............................... [[32mPASS[0m in 1.50s]
+[0m23:55:50.620160 [debug] [Thread-4 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9
+[0m23:55:50.620782 [debug] [Thread-4 (]: Began running node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:55:50.621433 [info ] [Thread-4 (]: 9 of 9 START test unique_stg_commits_sha ....................................... [RUN]
+[0m23:55:50.622111 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.dbt_github_analytics.not_null_stg_pull_requests_pr_number.d4b85aaea9, now test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610)
+[0m23:55:50.622605 [debug] [Thread-4 (]: Began compiling node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:55:50.632528 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"
+[0m23:55:50.635142 [info ] [Thread-3 (]: 5 of 9 PASS not_null_stg_issues_repo ........................................... [[32mPASS[0m in 1.59s]
+[0m23:55:50.635638 [debug] [Thread-4 (]: Began executing node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:55:50.636183 [debug] [Thread-3 (]: Finished running node test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9
+[0m23:55:50.638830 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"
+[0m23:55:50.639537 [debug] [Thread-4 (]: On test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_github_analytics", "target_name": "dev", "node_id": "test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select sha as unique_field
+  from `dev-analytics-platform-498418`.`github_analytics`.`stg_commits`
+  where sha is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m23:55:50.639955 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m23:55:50.706183 [info ] [Thread-2 (]: 8 of 9 PASS not_null_stg_pull_requests_repo .................................... [[32mPASS[0m in 1.48s]
+[0m23:55:50.706678 [warn ] [Thread-1 (]: 6 of 9 WARN 1273 not_null_stg_pull_requests_cycle_time_hours ................... [[33mWARN 1273[0m in 1.59s]
+[0m23:55:50.707133 [debug] [Thread-2 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060
+[0m23:55:50.707373 [debug] [Thread-1 (]: Finished running node test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23
+[0m23:55:51.492245 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dev-analytics-platform-498418&j=bq:US:de58b2b0-aabc-4485-b4a5-015558da61f2&page=queryresults
+[0m23:55:51.801530 [debug] [Thread-4 (]: SQL status: OK in 0.308 seconds
+[0m23:55:52.304859 [info ] [Thread-4 (]: 9 of 9 PASS unique_stg_commits_sha ............................................. [[32mPASS[0m in 1.68s]
+[0m23:55:52.305961 [debug] [Thread-4 (]: Finished running node test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610
+[0m23:55:52.307983 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m23:55:52.380163 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:55:52.380357 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_pull_requests_cycle_time_hours.82c4e7cb23' was properly closed.
+[0m23:55:52.380476 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_pull_requests_repo.23b010d060' was properly closed.
+[0m23:55:52.380585 [debug] [MainThread]: Connection 'test.dbt_github_analytics.not_null_stg_issues_repo.bb14e505e9' was properly closed.
+[0m23:55:52.380689 [debug] [MainThread]: Connection 'test.dbt_github_analytics.unique_stg_commits_sha.a828dfe610' was properly closed.
+[0m23:55:52.380821 [info ] [MainThread]: 
+[0m23:55:52.380952 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 5.79 seconds (5.79s).
+[0m23:55:52.381696 [debug] [MainThread]: Command end result
+[0m23:55:52.435242 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/manifest.json
+[0m23:55:52.436075 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/semantic_manifest.json
+[0m23:55:52.439211 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shobitha/dev-analytics-platform/dbt_github_analytics/target/run_results.json
+[0m23:55:52.439335 [info ] [MainThread]: 
+[0m23:55:52.439474 [info ] [MainThread]: [33mCompleted with 1 warning:[0m
+[0m23:55:52.439589 [info ] [MainThread]: 
+[0m23:55:52.439742 [warn ] [MainThread]: [33mWarning in test not_null_stg_pull_requests_cycle_time_hours (models/staging/schema.yml)[0m
+[0m23:55:52.439882 [warn ] [MainThread]: Got 1273 results, configured to warn if != 0
+[0m23:55:52.439983 [info ] [MainThread]: 
+[0m23:55:52.440115 [info ] [MainThread]:   compiled code at target/compiled/dbt_github_analytics/models/staging/schema.yml/not_null_stg_pull_requests_cycle_time_hours.sql
+[0m23:55:52.440227 [info ] [MainThread]: 
+[0m23:55:52.440353 [info ] [MainThread]: Done. PASS=8 WARN=1 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+[0m23:55:52.442419 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 6.9697456, "process_in_blocks": "0", "process_kernel_time": 0.30141, "process_mem_max_rss": "247709696", "process_out_blocks": "0", "process_user_time": 2.394552}
+[0m23:55:52.442617 [debug] [MainThread]: Command `dbt test` succeeded at 23:55:52.442580 after 6.97 seconds
+[0m23:55:52.442773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102f96930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068b7a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x128aee780>]}
+[0m23:55:52.442913 [debug] [MainThread]: Flushing usage events
+[0m23:55:52.867070 [debug] [MainThread]: An error was encountered while trying to flush usage events

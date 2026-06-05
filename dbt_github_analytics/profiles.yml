@@ -1,0 +1,11 @@
+dbt_github_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dev-analytics-platform-498418
+      dataset: github_analytics
+      threads: 4
+      location: US
+      keyfile: /Users/shobitha/keys/dev-analytics-platform-498418-4ab768153b45.json

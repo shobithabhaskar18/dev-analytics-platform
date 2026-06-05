@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_commits
+    columns:
+      - name: sha
+        tests:
+          - not_null
+          - unique
+      - name: repo
+        tests:
+          - not_null
+      - name: committed_at
+        tests:
+          - not_null
+
+  - name: stg_pull_requests
+    columns:
+      - name: pr_number
+        tests:
+          - not_null
+      - name: repo
+        tests:
+          - not_null
+      - name: cycle_time_hours
+        tests:
+          - not_null:
+              config:
+                severity: warn
+ 
+  - name: stg_issues
+    columns:
+      - name: issue_number
+        tests:
+          - not_null
+      - name: repo
+        tests:
+          - not_null

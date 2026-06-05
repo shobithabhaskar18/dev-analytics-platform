@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: github_analytics
+    database: dev-analytics-platform-498418
+    schema: github_analytics
+    tables:
+      - name: raw_commits
+      - name: raw_pull_requests
+      - name: raw_issues
