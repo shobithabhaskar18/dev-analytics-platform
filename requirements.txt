@@ -1,5 +1,9 @@
-requests
-google-cloud-bigquery
-python-dotenv
+streamlit
+plotly
 pandas
+google-cloud-bigquery
+google-cloud-bigquery-storage
 pyarrow
+db-dtypes
+anthropic
+python-dotenv

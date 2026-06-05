@@ -1,32 +1,45 @@
 import os
+import json
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 from google.cloud import bigquery
-from dotenv import load_dotenv
+from google.oauth2 import service_account
 import anthropic
 
-load_dotenv(dotenv_path=os.path.expanduser("~/dev-analytics-platform/.env"))
+PROJECT_ID = "dev-analytics-platform-498418"
+DATASET_ID = "github_analytics"
 
-PROJECT_ID = os.getenv("PROJECT_ID")
-DATASET_ID = os.getenv("DATASET_ID")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+@st.cache_resource
+def get_bq_client():
+    if "gcp_service_account" in st.secrets:
+        credentials = service_account.Credentials.from_service_account_info(
+            st.secrets["gcp_service_account"],
+            scopes=["https://www.googleapis.com/auth/cloud-platform"]
+        )
+        return bigquery.Client(credentials=credentials, project=PROJECT_ID)
+    else:
+        return bigquery.Client(project=PROJECT_ID)
 
-client_bq = bigquery.Client(project=PROJECT_ID)
-client_ai = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+@st.cache_resource
+def get_ai_client():
+    api_key = st.secrets.get("ANTHROPIC_API_KEY", os.getenv("ANTHROPIC_API_KEY"))
+    return anthropic.Anthropic(api_key=api_key)
 
 @st.cache_data(ttl=3600)
 def load_repo_health():
+    client = get_bq_client()
     query = f"""
         SELECT repo, total_prs, merged_prs, avg_pr_cycle_time_hours,
                avg_resolution_hours, avg_weekly_deploys, total_issues
         FROM `{PROJECT_ID}.{DATASET_ID}.repo_health_metrics`
         ORDER BY avg_weekly_deploys DESC
     """
-    return client_bq.query(query).to_dataframe()
+    return client.query(query).to_dataframe()
 
 @st.cache_data(ttl=3600)
 def load_developer_metrics():
+    client = get_bq_client()
     query = f"""
         SELECT author_login, repo, total_prs, merged_prs,
                avg_cycle_time_hours, merge_rate, avg_review_comments
@@ -35,9 +48,10 @@ def load_developer_metrics():
         ORDER BY merge_rate DESC
         LIMIT 20
     """
-    return client_bq.query(query).to_dataframe()
+    return client.query(query).to_dataframe()
 
 def generate_insights(repo_df, contrib_df):
+    client = get_ai_client()
     context = f"""
 Repository health metrics:
 {repo_df.to_string(index=False)}
@@ -45,7 +59,7 @@ Repository health metrics:
 Top contributors:
 {contrib_df.head(10).to_string(index=False)}
 """
-    message = client_ai.messages.create(
+    message = client.messages.create(
         model="claude-opus-4-6",
         max_tokens=600,
         messages=[{
